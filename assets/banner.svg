@@ -1,0 +1,99 @@
+<svg viewBox="0 0 1280 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SE Ranking Analyst — a Claude Agent Skill">
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#34D7BE"/>
+      <stop offset="1" stop-color="#5B8DEF"/>
+    </linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1221"/>
+      <stop offset="1" stop-color="#0C1730"/>
+    </linearGradient>
+    <clipPath id="round"><rect x="0" y="0" width="1280" height="360" rx="26"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <rect x="0" y="0" width="1280" height="360" fill="url(#bg)"/>
+    <!-- faint baseline glow -->
+    <rect x="0" y="0" width="6" height="360" fill="url(#accent)"/>
+
+    <!-- ===== LOGO MARK ===== -->
+    <g transform="translate(64,120)">
+      <rect x="0" y="0" width="120" height="120" rx="26" fill="#0E1830" stroke="url(#accent)" stroke-width="2.5"/>
+      <!-- mini grid -->
+      <g stroke="#1A2945" stroke-width="1">
+        <line x1="20" y1="40" x2="100" y2="40"/>
+        <line x1="20" y1="64" x2="100" y2="64"/>
+        <line x1="20" y1="88" x2="100" y2="88"/>
+      </g>
+      <!-- rising trajectory -->
+      <polyline points="24,92 44,80 64,58 84,44" fill="none" stroke="url(#accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- dotted forecast tail -->
+      <polyline points="84,44 100,32" fill="none" stroke="#5B8DEF" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 7"/>
+      <!-- nodes -->
+      <circle cx="44" cy="80" r="4.5" fill="#0E1830" stroke="url(#accent)" stroke-width="3"/>
+      <circle cx="64" cy="58" r="4.5" fill="#0E1830" stroke="url(#accent)" stroke-width="3"/>
+      <!-- lead node with focus ring (analysis) -->
+      <circle cx="84" cy="44" r="9" fill="none" stroke="#34D7BE" stroke-width="2" opacity="0.55"/>
+      <circle cx="84" cy="44" r="5" fill="#34D7BE"/>
+    </g>
+
+    <!-- ===== WORDMARK BLOCK ===== -->
+    <g transform="translate(212,0)" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+      <text x="0" y="128" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" font-size="16" letter-spacing="4" fill="#34D7BE">A CLAUDE AGENT SKILL</text>
+      <text x="-2" y="190" font-size="58" font-weight="700" letter-spacing="0.5" fill="#EAF0FB">SE Ranking Analyst</text>
+      <text x="0" y="230" font-size="21" fill="#8DA0C4">Rankings · AI visibility · backlinks · audits — analyzed safely,</text>
+      <text x="0" y="258" font-size="21" fill="#8DA0C4">the same defensible way every run.</text>
+
+      <!-- capability pills -->
+      <g font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" font-size="13" fill="#B9C6E2">
+        <g transform="translate(0,286)">
+          <rect x="0" y="0" width="168" height="30" rx="15" fill="#111E38" stroke="#26375A" stroke-width="1"/>
+          <text x="16" y="20">PROJECT_ vs DATA_</text>
+        </g>
+        <g transform="translate(184,286)">
+          <rect x="0" y="0" width="118" height="30" rx="15" fill="#111E38" stroke="#26375A" stroke-width="1"/>
+          <text x="16" y="20">safe deltas</text>
+        </g>
+        <g transform="translate(318,286)">
+          <rect x="0" y="0" width="186" height="30" rx="15" fill="#111E38" stroke="#26375A" stroke-width="1"/>
+          <text x="16" y="20">no cross-client mix</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- ===== SIGNATURE CHART PANEL ===== -->
+    <g transform="translate(872,86)">
+      <rect x="0" y="0" width="344" height="188" rx="18" fill="#0E1830" stroke="#1E2B47" stroke-width="1.5"/>
+      <!-- rank scale labels -->
+      <g font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" fill="#5E6E92">
+        <text x="18" y="40">#1</text>
+        <text x="14" y="160">#100</text>
+      </g>
+      <!-- gridlines -->
+      <g stroke="#16223B" stroke-width="1">
+        <line x1="56" y1="44" x2="320" y2="44"/>
+        <line x1="56" y1="96" x2="320" y2="96"/>
+        <line x1="56" y1="148" x2="320" y2="148"/>
+      </g>
+      <!-- improving trajectory (lower position = higher up) -->
+      <polyline points="74,140 134,150 194,104 254,72" fill="none" stroke="url(#accent)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- dotted forecast -->
+      <polyline points="254,72 300,54" fill="none" stroke="#5B8DEF" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="2 8"/>
+      <!-- check-date nodes -->
+      <circle cx="74"  cy="140" r="5" fill="#0E1830" stroke="url(#accent)" stroke-width="3"/>
+      <!-- a down-delta node, coral -->
+      <circle cx="134" cy="150" r="5" fill="#0E1830" stroke="#FF6B6B" stroke-width="3"/>
+      <circle cx="194" cy="104" r="5" fill="#0E1830" stroke="url(#accent)" stroke-width="3"/>
+      <circle cx="254" cy="72"  r="6" fill="#34D7BE"/>
+      <!-- forecast node, hollow -->
+      <circle cx="300" cy="54"  r="5" fill="none" stroke="#5B8DEF" stroke-width="2.5" stroke-dasharray="2 4"/>
+      <!-- delta badge -->
+      <g transform="translate(196,118)">
+        <rect x="0" y="0" width="66" height="24" rx="12" fill="#10241F" stroke="#34D7BE" stroke-width="1"/>
+        <text x="12" y="16" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" fill="#34D7BE">&#9650; +18</text>
+      </g>
+      <!-- caption -->
+      <text x="56" y="178" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" fill="#5E6E92">period-over-period &#916; · forecast</text>
+    </g>
+  </g>
+</svg>

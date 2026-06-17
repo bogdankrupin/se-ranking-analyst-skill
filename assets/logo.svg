@@ -1,0 +1,25 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SE Ranking Analyst logo">
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#34D7BE"/>
+      <stop offset="1" stop-color="#5B8DEF"/>
+    </linearGradient>
+  </defs>
+  <rect x="12" y="12" width="216" height="216" rx="48" fill="#0E1830" stroke="url(#accent)" stroke-width="5"/>
+  <!-- grid -->
+  <g stroke="#1A2945" stroke-width="2">
+    <line x1="48" y1="84"  x2="192" y2="84"/>
+    <line x1="48" y1="128" x2="192" y2="128"/>
+    <line x1="48" y1="172" x2="192" y2="172"/>
+  </g>
+  <!-- rising trajectory -->
+  <polyline points="56,180 92,156 128,112 164,84" fill="none" stroke="url(#accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- dotted forecast tail -->
+  <polyline points="164,84 196,62" fill="none" stroke="#5B8DEF" stroke-width="8" stroke-linecap="round" stroke-dasharray="3 13"/>
+  <!-- nodes -->
+  <circle cx="92"  cy="156" r="8" fill="#0E1830" stroke="url(#accent)" stroke-width="5"/>
+  <circle cx="128" cy="112" r="8" fill="#0E1830" stroke="url(#accent)" stroke-width="5"/>
+  <!-- lead node with focus ring -->
+  <circle cx="164" cy="84" r="17" fill="none" stroke="#34D7BE" stroke-width="3.5" opacity="0.5"/>
+  <circle cx="164" cy="84" r="9" fill="#34D7BE"/>
+</svg>
