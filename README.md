@@ -116,13 +116,17 @@ se-ranking-analyst-skill/
 └── se-ranking-analyst.skill     # prebuilt, installable package (also attached to Releases)
 ```
 
-## Customising it
+## For contributors
+
+These steps are only needed if you want to modify the skill or repackage it — most users can just download the released `.skill` and install it.
+
+**Customising it**
 
 - **Thresholds / report shape:** edit `SKILL.md` (Step 4 and Step 5).
-- **House style:** add your agency's report template under Step 5.
+- **House style:** add your own report template under Step 5.
 - **New categories or tools:** extend `references/endpoints.md`.
 
-## Build the `.skill` from source
+**Build the `.skill` from source**
 
 A `.skill` file is a ZIP whose root is the skill folder:
 
