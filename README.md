@@ -32,11 +32,11 @@ This skill encodes that knowledge once. When a task touches SE Ranking data, Cla
 
 ## What it's for
 
-The skill solves three recurring problems with SEO data work in an AI assistant:
+The skill makes SEO data work in an AI assistant faster and more structured:
 
-1. **Right tool, first time.** SE Ranking splits its tools into two families — `PROJECT_*` (your own tracked projects, by `site_id`) and `DATA_*` (research on any domain, which spends data-API credits). Choosing the wrong family is the most common and most wasteful mistake. The skill settles the choice up front.
-2. **Trustworthy numbers.** It enforces hard rules against the classic automated-reporting failure mode, where a credit-saving shortcut quietly backfills one client's report with another brand's or another period's data and reports it as normal. One project per report, missing data stays missing, nothing is silently reused.
-3. **A consistent, defensible deliverable.** Every report comes out in the same shape, ending with an auditable "Data notes" section that records exactly what was compared and where data was absent.
+1. **Finds the right project on its own.** You can say "this week's report for example.com" and the skill resolves which tracked project you mean and confirms it back — no need to hand it a `site_id` or explain your setup each time. It keeps each project's analysis self-contained, so a multi-client or multi-site workspace stays organised.
+2. **Understands the history.** It reads the project's real check dates and prior periods, so it knows which dates exist to compare against and can orient itself in earlier analyses instead of asking you to re-establish context. Comparisons line up against dates that were actually recorded.
+3. **A consistent, readable deliverable.** Every report comes out in the same shape, ending with a short "Data notes" section that states exactly which dates were compared and where a period simply had no data — so the output is easy to trust and easy to hand to a client or teammate.
 
 ## Functions
 
@@ -46,7 +46,7 @@ The skill solves three recurring problems with SEO data work in an AI assistant:
 - **Backlink analysis** — net referring-domain change, new vs lost links over a period, profile summaries, authority and anchor breakdowns.
 - **Site audits** — new critical issues vs the previous crawl, resolved issues, pages affected by a specific issue.
 - **Keyword & competitor research** — bulk keyword metrics, related/long-tail/question expansion, competing-domain discovery, keyword-overlap comparison.
-- **Safe delta engine** — per-metric current-minus-baseline change, direction stated in words, no cross-client contamination, gaps reported as "no data".
+- **Accurate deltas** — per-metric current-minus-baseline change, with direction stated in words and periods that genuinely had no data shown as "no data" rather than guessed.
 - **Report generator** — a fixed structure (TL;DR → rankings → AI visibility → backlinks → audit → recommended actions → data notes), tunable thresholds, optional house style.
 
 ## Who it's for, and the tasks it handles
@@ -116,9 +116,23 @@ se-ranking-analyst-skill/
 └── se-ranking-analyst.skill     # prebuilt, installable package (also attached to Releases)
 ```
 
+## Customising it
+
+- **Thresholds / report shape:** edit `SKILL.md` (Step 4 and Step 5).
+- **House style:** add your agency's report template under Step 5.
+- **New categories or tools:** extend `references/endpoints.md`.
+
+## Build the `.skill` from source
+
+A `.skill` file is a ZIP whose root is the skill folder:
+
+```bash
+zip -r se-ranking-analyst.skill se-ranking-analyst -x "*/__pycache__/*" "*.DS_Store"
+```
+
 ## Privacy & safety
 
-No `site_id`s, API keys, or client names are baked in — the skill is instructions only and runs on each user's own projects. It explicitly forbids merging data across clients and forbids substituting missing data, which is the main way automated reports leak one client's numbers into another's.
+No `site_id`s, API keys, or client names are baked in — the skill is instructions only and runs entirely on each user's own projects. It keeps every project's analysis self-contained and reports a period's data exactly as recorded, so each report reflects only its own project and the dates that were actually checked.
 
 ## License
 
