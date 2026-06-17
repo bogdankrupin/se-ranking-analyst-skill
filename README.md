@@ -102,10 +102,18 @@ For **Claude Code**, place the skill folder at `.claude/skills/se-ranking-analys
 ## Repo structure
 
 ```
-se-ranking-analyst/
-├── SKILL.md              # the skill: workflow, safe-delta rules, report format
-└── references/
-    └── endpoints.md      # tool map by category (rankings, AI, backlinks, SERP, audit, …)
+se-ranking-analyst-skill/
+├── README.md
+├── LICENSE
+├── .gitignore
+├── assets/
+│   ├── banner.svg
+│   └── logo.svg
+├── se-ranking-analyst/          # the skill itself
+│   ├── SKILL.md                 #   workflow, safe-delta rules, report format
+│   └── references/
+│       └── endpoints.md         #   tool map by category (rankings, AI, backlinks, …)
+└── se-ranking-analyst.skill     # prebuilt, installable package (also attached to Releases)
 ```
 
 ## Customising it
@@ -128,4 +136,4 @@ No `site_id`s, API keys, or client names are baked in — the skill is instructi
 
 ## License
 
-   Released under the [MIT License](LICENSE) — free to use, modify, and distribute.
+Released under the [MIT License](LICENSE) — free to use, modify, and distribute.
