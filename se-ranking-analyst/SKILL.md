@@ -11,7 +11,7 @@ description: >-
   explicitly but the user clearly wants analysis of rankings, backlinks, AI
   search visibility, or audit data for a site they track. It encodes which tool
   to reach for per data category, how to resolve a project and comparison dates,
-  how to compute deltas safely without cross-client contamination, and the
+  how to compute period-over-period deltas accurately, and the
   report format.
 compatibility: >-
   Requires access to SE Ranking data, either through the SE Ranking MCP
@@ -26,7 +26,7 @@ Turn raw SE Ranking data into a defensible analysis: pull the right metrics, com
 
 ## Mental model: two tool families, one API
 
-SE Ranking exposes a large set of tools, and the safe default is to load a tool's exact parameters before calling it (e.g. via tool search) rather than guessing parameter names. They split into two families, and picking the wrong one is the most common mistake:
+SE Ranking exposes a large set of tools, and the safe default is to load a tool's exact parameters before calling it (e.g. via tool search) rather than guessing parameter names. They split into two families, and it's worth picking the right one up front:
 
 - **PROJECT_\*** — operate on the user's own tracked projects (identified by a `site_id`). These reflect the real tracking setup: the keywords being monitored, the search engine and location configured, the actual check dates. Use these for client reporting and anything about "our site / our tracked keywords".
 - **DATA_\*** — research tools that work on *any* domain or keyword without a project. They consume SE Ranking data-API credits. Use these for competitor research, prospecting, or pulling a metric that isn't set up as a tracked project.
@@ -39,7 +39,7 @@ The same logic applies if the user is building an n8n / raw-API pipeline rather 
 
 Do this before pulling anything.
 
-1. Identify the exact project. If you don't have a `site_id`, call `PROJECT_listProjects` and match by domain. **Confirm the project name/domain back to the user before pulling** — a wrong `site_id` is the single most expensive error here, and it is cheap to catch now.
+1. Identify the exact project. If you don't have a `site_id`, call `PROJECT_listProjects` and match by domain. **Confirm the project name/domain back to the user before pulling** — this makes sure the whole report is built on the project the user actually meant, and it is cheap to confirm now.
 2. Establish two dates: the current period and the comparison baseline. Use `PROJECT_getCheckDates` (dates positions were actually checked) or `PROJECT_getHistoricalDates` (standard comparison points like yesterday / last month) so you compare against a date that genuinely exists, not an interpolated one.
 3. Confirm scope: which data categories are in this report (rankings, backlinks, AI visibility, audit) and which search engine / location, if the project has several.
 
@@ -49,7 +49,7 @@ Consult `references/endpoints.md` for the right tool per category. Pull the curr
 
 ## Step 3 — Compute deltas SAFELY (read this every time)
 
-These guard against a well-known failure mode in automated SEO reporting: a token- or credit-saving shortcut quietly backfills one client's report with another brand's or another period's data, and the pipeline reports it as normal — caught, if at all, only by a human reviewer. Treat the following as hard rules, not preferences:
+These keep each report built only from its own project's real data. Treat the following as hard rules, not preferences:
 
 - **One project per report.** Never merge data from multiple `site_id`s into a single client's analysis. Run each client as an isolated pass.
 - **Missing data is missing — never substitute.** If a metric has no record for a date (SE Ranking writes no record when nothing changed, so gaps are normal and meaningful), report it as "no data for this period". NEVER backfill a gap with the previous period's value, and NEVER pull a substitute figure from another project, brand, or keyword. Absence is signal, not a hole to fill.
@@ -98,7 +98,7 @@ Anything client-facing (an email, a posted report) is an explicit-permission act
 
 ## Credit and token discipline
 
-DATA_\* calls cost data-API credits; live MCP analysis costs tokens — two separate budgets. Pull only the categories and date pairs the report needs, batch where a bulk endpoint exists (e.g. `DATA_getKeywordsMetrics` for many keywords at once), and don't re-pull a period you already have in context. Don't trade away the safety rules in Step 3 to save credits — that trade is exactly what produces the cross-client contamination failure mode.
+DATA_\* calls cost data-API credits; live MCP analysis costs tokens — two separate budgets. Pull only the categories and date pairs the report needs, batch where a bulk endpoint exists (e.g. `DATA_getKeywordsMetrics` for many keywords at once), and don't re-pull a period you already have in context. Keep the Step 3 data rules in place even when optimising for credits — accuracy comes first.
 
 ## Language
 
