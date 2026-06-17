@@ -128,4 +128,4 @@ No `site_id`s, API keys, or client names are baked in — the skill is instructi
 
 ## License
 
-Add a license of your choice (MIT is a common default for shareable skills).
+   Released under the [MIT License](LICENSE) — free to use, modify, and distribute.
