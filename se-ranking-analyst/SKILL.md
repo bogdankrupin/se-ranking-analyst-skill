@@ -52,7 +52,7 @@ Consult `references/endpoints.md` for the right tool per category. Pull the curr
 These keep each report built only from its own project's real data. Treat the following as hard rules, not preferences:
 
 - **One project per report.** Never merge data from multiple `site_id`s into a single client's analysis. Run each client as an isolated pass.
-- **Missing data is missing — never substitute.** If a metric has no record for a date (SE Ranking writes no record when nothing changed, so gaps are normal and meaningful), report it as "no data for this period". NEVER backfill a gap with the previous period's value, and NEVER pull a substitute figure from another project, brand, or keyword. Absence is signal, not a hole to fill.
+- **Missing data is missing — never substitute.** If a metric has no record for a date (SE Ranking writes no record when nothing changed, so gaps are normal and meaningful), report it as "no data for this period". Don't fill a gap with the previous period's value or with an unrelated figure. Absence is signal, not a hole to fill.
 - **No silent reuse.** If you reuse a prior result for any reason (e.g. a genuinely unchanged metric), say so explicitly in the output. Do not present reused or carried-over numbers as freshly pulled.
 - **Compute change as current minus baseline, per metric, with both raw and percent where it helps.** For positions, lower is better — a move from 8 to 3 is an improvement of 5; state direction in words so the sign is never ambiguous.
 

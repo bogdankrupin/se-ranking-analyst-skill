@@ -53,7 +53,7 @@ The skill makes SEO data work in an AI assistant faster and more structured:
 
 **SEO & digital-marketing agencies** managing many client sites
 - Produce a weekly or monthly client report comparing this period to a baseline, with a TL;DR and prioritised actions.
-- Run each client as an isolated pass so no client's data ever leaks into another's report.
+- Run each client as an isolated pass, so each report reflects only that client's own project and dates.
 - Draft the client-facing email or summary for human approval before anything is sent.
 
 **In-house SEO / content teams** tracking a single domain
@@ -68,7 +68,7 @@ The skill makes SEO data work in an AI assistant faster and more structured:
 
 **SEO automation & RevOps builders** wiring SE Ranking into n8n / API / MCP pipelines
 - Use Claude as the safe analysis layer on top of scheduled SE Ranking pulls.
-- Apply the same safe-delta rules (no backfill, no cross-client substitution) inside an automated flow.
+- Apply the same data rules (report each period exactly as recorded, keep each project self-contained) inside an automated flow.
 - Keep a human approval gate before client delivery rather than fully auto-sending.
 
 **SEO consultants & analysts** doing on-demand research
@@ -83,7 +83,7 @@ The skill makes SEO data work in an AI assistant faster and more structured:
 - "Compare our tracked keywords against competitor X in the top 10."
 - "Net referring-domain change for example.com over the last 30 days; flag anything lost from a high-authority domain."
 
-You don't have to name the skill — Claude triggers it from the task itself. Its first step is always to confirm the exact project/domain back to you, because a wrong `site_id` is the most expensive error and the cheapest to catch early.
+You don't have to name the skill — Claude triggers it from the task itself. Its first step is always to confirm the exact project/domain back to you, so the whole report is built on the project you actually meant.
 
 ## Prerequisites
 
