@@ -26,7 +26,7 @@ Works with the SE Ranking **MCP connector** (recommended) or the SE Ranking **AP
 
 ## What this skill is
 
-Out of the box, Claude *can* call SE Ranking's tools — but it has to figure out, every single time, which of the dozens of available tools fits the question, how to line up comparable dates, and how to turn a pile of numbers into a report. That improvisation is slow and easy to get wrong.
+Out of the box, Claude can call SE Ranking's tools — but a new user still leans on Claude to work out, each time, which of the dozens of powerful tools fits the question, how to line up comparable dates, and how to turn the numbers into a clean report. Done from scratch every time, that's slow and easy to trip up on.
 
 This skill encodes that knowledge once. When a task touches SE Ranking data, Claude loads the skill and follows a fixed, reviewed procedure: identify the project, pull the right metrics for two comparable periods, compute the change safely, and write the report in a consistent shape. It is **instructions only** — no executable code, no stored credentials.
 
