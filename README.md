@@ -116,20 +116,6 @@ se-ranking-analyst-skill/
 └── se-ranking-analyst.skill     # prebuilt, installable package (also attached to Releases)
 ```
 
-## Customising it
-
-- **Thresholds / report shape:** edit `SKILL.md` (Step 4 and Step 5).
-- **House style:** add your agency's report template under Step 5.
-- **New categories or tools:** extend `references/endpoints.md`.
-
-## Build the `.skill` from source
-
-A `.skill` file is a ZIP whose root is the skill folder:
-
-```bash
-zip -r se-ranking-analyst.skill se-ranking-analyst -x "*/__pycache__/*" "*.DS_Store"
-```
-
 ## Privacy & safety
 
 No `site_id`s, API keys, or client names are baked in — the skill is instructions only and runs on each user's own projects. It explicitly forbids merging data across clients and forbids substituting missing data, which is the main way automated reports leak one client's numbers into another's.
